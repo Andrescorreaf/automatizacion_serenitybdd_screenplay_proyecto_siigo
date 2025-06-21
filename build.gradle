@@ -45,6 +45,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
     testImplementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
     implementation 'net.objecthunter:exp4j:0.4.8'
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
 }
 
 gradle.startParameter.continueOnFailure = true

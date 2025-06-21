@@ -2,13 +2,12 @@ package com.co.starter.stepdefinitions;
 
 import com.co.starter.questions.TituloPruebaExitosa;
 import com.co.starter.tasks.ResponderQuestionario;
-import com.co.starter.tasks.paginaderegistro.AbrirPaginaDeRePrueba;
-import com.co.starter.tasks.paginaderegistro.IngresarAlSitio;
+import com.co.starter.tasks.paginadeloginsiigo.AbrirPaginaDeRePrueba;
+import com.co.starter.tasks.paginadeloginsiigo.IngresarAlSitio;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.waits.Wait;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,9 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.Question.not;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
 
 public class ResponderQuestionarioStepDefinitions {
 
