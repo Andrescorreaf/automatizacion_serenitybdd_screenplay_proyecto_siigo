@@ -2,7 +2,6 @@ package com.co.starter.stepdefinitions;
 
 import com.co.starter.questions.TituloPruebaExitosa;
 import com.co.starter.tasks.ResponderQuestionario;
-import com.co.starter.tasks.paginadeloginsiigo.AbrirPaginaDeRePrueba;
 import com.co.starter.tasks.paginadeloginsiigo.IngresarAlSitio;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
@@ -22,9 +21,9 @@ public class ResponderQuestionarioStepDefinitions {
     @Dado("que el usuario esta en la pagina del questionario")
     public void queElUsuarioEstaEnLaPaginaDelQuestionario() {
 
-        OnStage.theActorInTheSpotlight().wasAbleTo(
+        /*OnStage.theActorInTheSpotlight().wasAbleTo(
                 AbrirPaginaDeRePrueba.abrir(),
-                IngresarAlSitio.delQuestionario());
+                IngresarAlSitio.delQuestionario());*/
     }
     @Cuando("el usuario completa el formulario del questionario exitoso")
     public void elUsuarioCompletaElFormularioDelQuestionarioExitoso() {

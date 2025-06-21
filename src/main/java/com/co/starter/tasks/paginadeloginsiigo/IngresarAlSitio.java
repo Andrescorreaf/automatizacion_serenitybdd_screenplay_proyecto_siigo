@@ -2,7 +2,6 @@ package com.co.starter.tasks.paginadeloginsiigo;
 
 import com.co.starter.Utils.ExcelReader;
 import com.co.starter.userinterface.SitioDeLoginSiigoPage.SitioDeLoginSiigo;
-import com.co.starter.userinterface.home.LoginPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.actions.Click;
