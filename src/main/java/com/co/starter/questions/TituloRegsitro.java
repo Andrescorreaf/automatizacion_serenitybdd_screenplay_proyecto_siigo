@@ -9,7 +9,7 @@ public class TituloRegsitro implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        return SitioDeLoginSiigo.TITULO_CUENTA.resolveFor(actor).getText();
+        return SitioDeLoginSiigo.CONTRASENA.resolveFor(actor).getText();
     }
 
     public static Question<String> es() {
