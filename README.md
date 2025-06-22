@@ -52,7 +52,7 @@ src
 
 **▶️ Desde un runner específico (opcional):**
 ``` bash
-  ./gradlew clean test --tests "co.com.exito.runners.RecargaMovilRunner"
+  ./gradlew clean test --tests "co.com.exito.runners.Runer"
 ```
 **📄 Reporte de Serenity**
 
