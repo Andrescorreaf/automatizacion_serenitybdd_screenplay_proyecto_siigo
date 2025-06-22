@@ -52,7 +52,7 @@ src
 
 **▶️ Desde un runner específico (opcional):**
 ``` bash
-  ./gradlew clean test --tests "co.com.exito.runners.Runer"
+  ./gradlew clean test --tests "co.com.exito.runners.crear_usuario"
 ```
 **📄 Reporte de Serenity**
 
