@@ -33,12 +33,12 @@ public class CreateAPersonTypeCustomerStepDefinitions {
     public void elUsuarioCompletaElFormularioConLosDatosDelClienteYGuarda() {
 
         OnStage.theActorInTheSpotlight().attemptsTo(
-                LLenarFormularioDatosBasicos.delCliente("Es persona", "Cédula de ciudadanía",
-                        "12356871", "236",
-                        "Liliana", "Corree",
-                                "LiliPop","Manizales",
-                        "cr 2 # 22 -32", "57",
-                        "3148567978")
+                LLenarFormularioDatosBasicos.delCliente("8600125003", "202",
+                        "Andre", "Francis",
+                        "Andrfranc", "Manizales",
+                                "cr2 # 00 - 00","57",
+                        "3148507679", "textautomationacorrea@gmailcom",
+                        "170006")
         );
     }
 
@@ -52,8 +52,6 @@ public class CreateAPersonTypeCustomerStepDefinitions {
 
         String titulo = TituloRegsitro.es().answeredBy(OnStage.theActorInTheSpotlight());
         System.out.println("Título actual de la página: " + titulo);
-
-        System.setProperty("serenity.keep.driver.open", "true");
 
     }
 

@@ -2,27 +2,108 @@ package com.co.starter.userinterface.formularioderegistro;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
+import net.thucydides.core.webdriver.shadow.ByShadow;
 
 public class FormularioDeRegsitroPage {
 
     public static final Target TITULO_CREAR_TERCER =  Target.the("Seleccionar titulo crear tercero").located(By.xpath("//*[@id=\"sticky\"]/div[1]/h2"));
 
-    public static final Target SELECT_TIPO_CLIENTE =  Target.the("Selector tipo de cliente").located(By.xpath("//siigo-dropdownlist-web//i[contains(@class, 'mdc-select__dropdown-icon')]"));
-    public static final Target OPCION_TIPO_CLIENTE = Target.the("Modal opciones de cliente:").located(By.xpath("//*[@class='siigo-components']/div/div/div[1]/div[1]/div[1]/siigo-dropdownlist-web//div/div/div[2]/ul/li[1]"));
+    // Select tipo client Es persona
+    public static final Target SELECT_TIPO_CLIENTE = Target.the("dropdown de tipo de cliente")
+            .located(ByShadow.cssSelector(
+                    ".card > div > div > div:nth-child(1) > div.column.is-5 > div:nth-child(1) > siigo-dropdownlist-web",
+                    "div > div > div.mdc-select__anchor.mdc-ripple-upgraded"
+            ));
 
-    public static final Target SELECT_TIPO_IDENTIDAD =  Target.the("Selector tipo de identidad").located(By.xpath("xpath=//div[@class='siigo-components']/div/div/div/div/div[3]/siigo-identification-input-web"));
-    public static final Target OPCION_TIPO_IDENTIDAD= Target.the("Modal opciones de indentificación: ").located(By.xpath("//siigo-textfield-web[@value='0']"));
-    public static final Target INPUT_NUM_IDENTIDAD = Target.the("Input para ingresar número de documento").located(By.xpath("//*[@id=identification]/input"));
+    public static final Target OPCION_TIPO_CLIENTE_PERSON =  Target.the("dropdown de tipo de cliente")
+            .located(ByShadow.cssSelector(
+                    ".card > div > div > div:nth-child(1) > div.column.is-5 > div:nth-child(1) > siigo-dropdownlist-web",
+                    "div > div > div.mdc-select__menu.mdc-menu.mdc-menu-surface.mdc-menu-surface--open.mdc-menu-surface--is-open-below > ul > li.mdc-list-item.mdc-list-item--selected > span"
+            ));
 
-    public static final Target INPUT_CODE_SUCURSAL = Target.the("Input para ingresar codigo de la sucursal").located(By.xpath("//div[@id='s2d7bdaf-8e95-4d83-9318-600b7c7512e2']/div/div/div[2]/div/siigo-phone-web"));
 
-    public static final Target INPUT_NOMBRE_CLIENTE = Target.the("Input para ingresar el nombre del cliente").located(By.xpath("//siigo-textfield-web//label/span[contains(text(), 'Nombre')]")); //label/span[contains(text(), 'Nombres')]/ancestor::siigo-textfield-web//input
-    public static final Target INPUT_APELLIDO_CLIENTE = Target.the("Input para ingresar el apellido del lciente").located(By.xpath("//siigo-textfield-web//label/span[contains(text(), 'Apellidos')]"));
-    public static final Target INPUT_NOMBRE_COMERCIAL_CLIENTE = Target.the("Input para ingresar el nombre comercial del lciente").located(By.xpath("//label[contains(text(), 'Nombre comercial')]/ancestor::div[contains(@class, 'mdc-text-field')]//input"));
-    public static final Target INPUT_CIUDAD_CLIENTE = Target.the("Input para ingresar la ciudada del lciente").located(By.id("inputAutocompletecity"));
-    public static final Target INPUT_DIRECCION_CLIENTE = Target.the("Input para ingresar la dirección del lciente").located(By.xpath("//label[contains(text(), 'Dirección')]/ancestor::div[contains(@class, 'mdc-text-field')]//input"));
-    public static final Target INPUT_INDICATIVO_NUM_TELE_CLIENTE = Target.the("Input para ingresar la num indicativo telefono del cliente").located(By.xpath("//input[@name='Indicativo' and contains(@class, 'siigo-phone')]"));
-    public static final Target INPUT_NUM_TELE_CLIENTE = Target.the("Input para ingresar la numero de telefono del cliente").located(By.xpath("//input[@name='# de Teléfono' and contains(@class, 'siigo-phone')]"));
+    // Select tipo de documento "Cedual"
+
+    public static final Target SELECT_TIPO_IDENTIDAD =  Target.the("Selector tipo de identidad")
+            .located(ByShadow.cssSelector(
+                    ".card > div > div > div:nth-child(1) > div.column.is-5 > div:nth-child(2) > siigo-dropdownlist-web",
+                    "div > div > div.mdc-select__anchor.mdc-ripple-upgraded"));
+    public static final Target OPCION_TIPO_IDENTIDAD_CEDULA= Target.the("Modal opciones de indentificación: ").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-5 > div:nth-child(2) > siigo-dropdownlist-web",
+            "div > div > div.mdc-select__menu.mdc-menu.mdc-menu-surface.mdc-menu-surface--open.mdc-menu-surface--is-open-below > ul > li.mdc-list-item.mdc-list-item--selected"));
+
+    public static final Target INPUT_NUM_IDENTIDAD = Target.the("Input para ingresar número de documento").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-5 > div:nth-child(3) > siigo-identification-input-web",
+            "#identification > input"));
+
+
+    public static final Target INPUT_CODE_SUCURSAL = Target.the("Input para ingresar codigo de la sucursal").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-5 > div:nth-child(5) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_NOMBRE_CLIENTE = Target.the("Input para ingresar el nombre del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-7 > div:nth-child(1) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_APELLIDO_CLIENTE = Target.the("Input para ingresar el apellido del lciente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-7 > div:nth-child(2) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+    public static final Target INPUT_NOMBRE_COMERCIAL_CLIENTE = Target.the("Input para ingresar el nombre comercial del lciente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-7 > div:nth-child(4) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+    public static final Target INPUT_CIUDAD_CLIENTE = Target.the("Input para ingresar la ciudada del lciente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-7 > div:nth-child(5) > siigo-autocomplete-web",
+            "#inputAutocompletecity"));
+
+    public static final Target INPUT_DIRECCION_CLIENTE = Target.the("Input para ingresar la dirección del lciente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(1) > div.column.is-7 > div.field.ng-star-inserted > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_INDICATIVO_NUM_TELE_CLIENTE = Target.the("Input para ingresar la num indicativo telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(3) > div > siigo-phone-web",
+            "spanIndicative0"));
+
+    public static final Target INPUT_NUM_TELE_CLIENTE = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div:nth-child(3) > div > siigo-phone-web",
+            "#spanNumber0"));
+
+    public static final Target INPUT_FACT_NOMBRE_CONTACTO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div:nth-child(1) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_FACT_APELLIDO_CONTACTO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div:nth-child(2) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_FACT_CORREO_CONTACTO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div:nth-child(3) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target SELEC_FACT_FACT_TIPO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card> div > div > div > div.column.is-5 > div:nth-child(4) > siigo-dropdownlist-web",
+            "div > div > div.mdc-select__anchor.mdc-ripple-upgraded"));
+    public static final Target OPTION_FACT_FACT_TIPO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div:nth-child(4) > siigo-dropdownlist-web",
+            "div > div > div.mdc-select__menu.mdc-menu.mdc-menu-surface.mdc-menu-surface--open.mdc-menu-surface--is-open-below > ul > li:nth-child(2) > span"));
+
+    public static final Target INPUT_FACT_INDICA_CONTACTO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div.columns.phone > div.column.is-5 > div > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_FACT_NUME_CONTACTO = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div.columns.phone > div.column.is-7 > div > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target INPUT_FACT_CODIGO_POSTAL = Target.the("Input para ingresar la numero de telefono del cliente").located(ByShadow.cssSelector(
+            ".card > div > div > div > div.column.is-5 > div:nth-child(6) > siigo-textfield-web",
+            ".mdc-text-field__input"));
+
+    public static final Target BOTON_GUARDAR = Target.the("Boton guardar tercer").located(By.xpath("//*[@id=\"sticky\"]/div[2]/button[2]"));
+
+
+
+
+
 
 
 
