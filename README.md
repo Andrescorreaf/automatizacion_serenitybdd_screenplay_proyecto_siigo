@@ -1,4 +1,4 @@
-# Plantilla de Automatización con SernityBDD - Screenplay - cucumber - gherkin - gradle - Java. Projecto perosnal
+# Plantilla de Automatización con SernityBDD - Screenplay - cucumber - gherkin - gradle - Java. Projecto Siigo
 Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando **Serenity BDD**, **Screenplay Pattern**, **Cucumber (Gherkin)** y **Gradle**. El objetivo principal es validar el flujo de una **crear un usuario** en x portal.
 
 #  🛠 Tecnologías
@@ -14,9 +14,10 @@ Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando *
 Automatizar el flujo de  **crear un usuario exitoso**, validando paso a paso:
 
 1. Ingreso al sitio.
-2. ingresar datos de registro
-3. Clic en enviar formulario
-4. Validación de crear usuario exitoso
+2. Ir a modulo crear usuario
+3. ingresar datos de registro
+4. Clic en enviar formulario
+5. Validación de crear usuario exitoso
 
 
 ## 📁 Estructura del Proyecto
