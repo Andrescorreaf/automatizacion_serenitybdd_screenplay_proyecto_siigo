@@ -1,6 +1,6 @@
 package com.co.starter.tasks.formulario;
 
-import com.co.starter.userinterface.formulariodelquestionario.FormularioDePregutasPage;
+import com.co.starter.userinterface.formularioderegistro.FormularioDeRegsitroPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SendKeys;
@@ -18,7 +18,7 @@ public class OperacionFecha implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         // Obtener el texto que contiene días y fecha
-        String texto = Text.of(FormularioDePregutasPage.TEXTO_DE_LA_FECHA)
+        String texto = Text.of(FormularioDeRegsitroPage.INPUT_CIUDAD_CLIENTE)
                 .answeredBy(actor)
                 .trim();
 
@@ -63,7 +63,7 @@ public class OperacionFecha implements Task {
         String fechaParaInput = fechaResultado.format(DateTimeFormatter.ofPattern("MMddyyyy"));
 
         actor.attemptsTo(
-                SendKeys.of(fechaParaInput).into(FormularioDePregutasPage.INPUT_INGRESAR_FECHA)
+                SendKeys.of(fechaParaInput).into(FormularioDeRegsitroPage.INPUT_NUM_TELE_CLIENTE)
         );
     }
 

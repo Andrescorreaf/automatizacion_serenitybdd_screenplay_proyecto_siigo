@@ -1,11 +1,22 @@
 package com.co.starter.stepdefinitions;
 
+import com.co.starter.questions.TituloRegsitro;
+import com.co.starter.tasks.formulario.LLenarFormularioDatosBasicos;
 import com.co.starter.tasks.paginadeloginsiigo.AbrirPaginaDeLogin;
+import com.co.starter.tasks.paginadeloginsiigo.IngresarAlSitio;
 import com.co.starter.tasks.paginadeloginsiigo.IrAPaginaCrearClienteTask;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
+import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+import static com.co.starter.questions.TituloRegsitro.es;
 
 public class CreateAPersonTypeCustomerStepDefinitions {
     
@@ -14,19 +25,36 @@ public class CreateAPersonTypeCustomerStepDefinitions {
         // Go to the Siigo site
         OnStage.theActorInTheSpotlight().wasAbleTo(
                 AbrirPaginaDeLogin.abrir(),
+                IngresarAlSitio.delLoginDeSiigo(),
                 IrAPaginaCrearClienteTask.deTercero());
     }
 
     @Cuando("el usuario completa el formulario con los datos del cliente y guarda")
     public void elUsuarioCompletaElFormularioConLosDatosDelClienteYGuarda() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                LLenarFormularioDatosBasicos.delCliente("Es persona", "Cédula de ciudadanía",
+                        "12356871", "236",
+                        "Liliana", "Corree",
+                                "LiliPop","Manizales",
+                        "cr 2 # 22 -32", "57",
+                        "3148567978")
+        );
     }
 
     @Entonces("debe ser redirigido a una pagina con un que coniene el nombre del cliente y estado activo")
     public void debeSerRedirigidoAUnaPaginaConUnQueConieneElNombreDelClienteYEstadoActivo() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        WebDriver driver = ThucydidesWebDriverSupport.getDriver();
+
+        // Espera hasta que la URL contenga '#exito'
+        new WebDriverWait(driver, Duration.ofSeconds(80))
+                .until(ExpectedConditions.urlContains("Customer"));
+
+        String titulo = TituloRegsitro.es().answeredBy(OnStage.theActorInTheSpotlight());
+        System.out.println("Título actual de la página: " + titulo);
+
+        System.setProperty("serenity.keep.driver.open", "true");
+
     }
 
 }
